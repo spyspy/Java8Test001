@@ -23,6 +23,9 @@ public class JavaTest004BiFun {
 
         System.out.println("=========================================");
 
+        List<Person> psResult3 = test.getPersonByAge2(19, ps,(biAge,biPs)->biPs.stream().filter(per ->per.getAge()>biAge).collect(Collectors.toList()));
+        psResult3.forEach(p->System.out.println(p.getName()+":"+p.getAge()));
+
     }
 
     //find some conditions in List<Person>
@@ -38,6 +41,12 @@ public class JavaTest004BiFun {
         BiFunction<Integer,List<Person>,List<Person>> biFun = (biAge,biPs)->biPs.stream().filter(per ->per.getAge()>biAge).collect(Collectors.toList());
         return biFun.apply(age,ps);
     }
+
+    //more advanced
+    private List<Person> getPersonByAge2(int age,List<Person>ps,BiFunction<Integer,List<Person>,List<Person>> biFun){
+        return biFun.apply(age,ps);
+    }
+
 }
 
 class Person{
