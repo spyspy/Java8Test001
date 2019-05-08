@@ -1,8 +1,6 @@
 package java8test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class Java8Test006Optional {
     public static void main(String[] args) throws Exception {
@@ -46,7 +44,23 @@ public class Java8Test006Optional {
         Company company = new Company();
         company.setName("MyCompany");
         List<Employee> listEmployee = Arrays.asList(employee1,employee2);
-        company.setEmployees(listEmployee);
+        //company.setEmployees(listEmployee);
+
+        //Traditional way
+        List<Employee> list = company.getEmployees();
+        if(null != list){
+            System.out.println("a");
+            System.out.println(list);
+        }else{
+            System.out.println("b");
+            System.out.println(new ArrayList<Employee>());
+        }
+
+        //new way with optional
+        Optional<Company> optionalCompany = Optional.ofNullable(company);
+        System.out.println(optionalCompany.map((myCom)->myCom.getEmployees()).orElse(Collections.emptyList()));
+
+        //
 
 
 
