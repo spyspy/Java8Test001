@@ -32,7 +32,9 @@ public class Java8Test007MethodRef {
         //students.forEach(ss1-> System.out.println(ss1.getScore()));
         System.out.println("**************************");
         //Method Reference way
+        //Type 1.  class name :: static method name
         students.sort(MyStudent::compareStudentByScore);
+        students.forEach(ss1-> System.out.println(ss1.getScore()));
 
 
 
