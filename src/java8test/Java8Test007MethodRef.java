@@ -28,13 +28,19 @@ public class Java8Test007MethodRef {
 
         //Sort method will change Object itself
         //Lambda way
-        //students.sort((ss1,ss2)->MyStudent.compareStudentByScore(ss1,ss2));
-        //students.forEach(ss1-> System.out.println(ss1.getScore()));
+        students.sort((ss1,ss2)->MyStudent.compareStudentByScore(ss1,ss2));
+        students.forEach(ss1-> System.out.println(ss1.getScore()));
         System.out.println("**************************");
+
+        MyStudent stua1 = new MyStudent("S1",85);
+        MyStudent stua2 = new MyStudent("S2",77);
+        MyStudent stua3 = new MyStudent("S3",99);
+        MyStudent stua4 = new MyStudent("S4",10);
+        List<MyStudent> students2 = Arrays.asList(stua1,stua2,stua3,stua4);
         //Method Reference way
         //Type 1.  class name :: static method name
-        students.sort(MyStudent::compareStudentByScore);
-        students.forEach(ss1-> System.out.println(ss1.getScore()));
+        students2.sort(MyStudent::compareStudentByScore);
+        students2.forEach(ss1-> System.out.println(ss1.getScore()));
 
 
 
