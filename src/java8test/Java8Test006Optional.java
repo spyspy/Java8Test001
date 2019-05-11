@@ -44,7 +44,8 @@ public class Java8Test006Optional {
         Company company = new Company();
         company.setName("MyCompany");
         List<Employee> listEmployee = Arrays.asList(employee1,employee2);
-        //company.setEmployees(listEmployee);
+        company.setEmployees(listEmployee);
+        System.out.println("*******************");
 
         //Traditional way
         List<Employee> list = company.getEmployees();
@@ -55,12 +56,22 @@ public class Java8Test006Optional {
             System.out.println("b");
             System.out.println(new ArrayList<Employee>());
         }
+        System.out.println("*******************");
 
         //new way with optional
         Optional<Company> optionalCompany = Optional.ofNullable(company);
         System.out.println(optionalCompany.map((myCom)->myCom.getEmployees()).orElse(Collections.emptyList()));
 
-        //
+        //*******************
+        System.out.println("*******************");
+        Optional<String> optionalString = Optional.of("TestBobo");
+        System.out.println(optionalString.map(s-> s.toUpperCase()));
+        System.out.println(optionalString.map(s-> s.toUpperCase()).orElse("EmptyWOW"));
+        System.out.println("*******************");
+        Optional<String> optionalString2 = Optional.ofNullable(null);
+        System.out.println(optionalString2.map(s-> s.toUpperCase()));
+        System.out.println(optionalString2.map(s-> s.toUpperCase()).orElse("EmptyWOW"));
+        System.out.println("*******************");
 
 
 
