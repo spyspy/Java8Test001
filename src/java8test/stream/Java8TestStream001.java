@@ -1,7 +1,9 @@
 package java8test.stream;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -53,7 +55,10 @@ public class Java8TestStream001 {
         List<Integer> listIn = Arrays.asList(1,2,3,4,5,6);
         System.out.println("sum:"+listIn.stream().map(i->i*2).reduce(0,Integer::sum));
 
-        System.out.println("-------------");
+        System.out.println("-------------Filter");
+        System.out.println("test:"+listIn.stream().filter(myin -> myin>4).reduce(0,Integer::sum));
+        System.out.println("-------------New Collections... List");
+        System.out.println("test:"+listIn.stream().filter(myin -> myin>4).collect(Collectors.toList()));
 
     }
 }
