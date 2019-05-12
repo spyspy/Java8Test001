@@ -61,6 +61,11 @@ public class Java8Test006Optional {
         //new way with optional
         Optional<Company> optionalCompany = Optional.ofNullable(company);
         System.out.println(optionalCompany.map((myCom)->myCom.getEmployees()).orElse(Collections.emptyList()));
+        //*******************
+        System.out.println("*******************");
+        //new way with optional
+        Optional<Company> optionalCompany2 = Optional.ofNullable(null);
+        System.out.println(optionalCompany2.map((myCom)->myCom.getEmployees()).orElse(Collections.emptyList()));
 
         //*******************
         System.out.println("*******************");
