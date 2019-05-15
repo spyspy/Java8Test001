@@ -46,12 +46,20 @@ public class Java8TestStream003 {
         streamFlat.flatMap(mylist->mylist.stream()).map(it->it*it).forEach(System.out::println);
         System.out.println("---------- ");
 
+        //Stream Method: generate()
         Stream<String> stream5 = Stream.generate(UUID.randomUUID()::toString);
         System.out.println(stream5.findFirst().get()); // Watch the warning
-
-
-
         System.out.println("---------- ");
+        Stream<String> stream6 = Stream.generate(UUID.randomUUID()::toString);
+        //Stream<String> stream6 = Stream.empty();
+        stream6.findFirst().ifPresent(System.out::println); //Correct way to do it in Optional
+        System.out.println("---------- iterate()");
+
+        //Stream Method: iterate()
+        Stream.iterate(1,x->x+1).limit(5).collect(Collectors.toList()).forEach(System.out::println);
+        System.out.println("---------- ");
+
+
 
 
     }
