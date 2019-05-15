@@ -12,15 +12,15 @@ public class Java8TestStream001 {
         //Stream
         //three parts:
         //1. origin
-        //2. middle operation
-        //3. final operation
+        //2. intermediate operation
+        //3. terminal operation
 
         //classification of Stream operation
         //1. lazy value  eg: operate on number,string...etc
         //2. early value
         //   eg: stream().aaa().bbb().ccc().count();
-        //                ^^^^^^^^^^^^middle  ^^^^^^^ final operation
-        //Once you do final operation, the middle operation will be done.
+        //                ^^^^^^intermediate  ^^^^^^^ terminal operation
+        //Once you do terminal operation, the intermediate operation will be done.
 
         //1
         Stream stream1 = Stream.of("Test1","Test2","Test3","Test4");
