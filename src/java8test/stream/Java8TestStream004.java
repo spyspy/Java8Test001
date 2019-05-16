@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Java8TestStream004 {
@@ -84,7 +85,26 @@ public class Java8TestStream004 {
         System.out.println("--------------- First Capitalized word");
         List<String> liststr = Arrays.asList("apple","banana","coco","daemon");
         liststr.stream().map(x->x.substring(0,1).toUpperCase()+x.substring(1)).forEach(System.out::println);
+        System.out.println("--------------- First Capitalized word 2");
+        List<String> liststr2 = Arrays.asList("apple","banana","coco","daemon");
+        liststr2.stream().map(x->{
+            System.out.println("InnerTest !!!");
+            return x.substring(0,1).toUpperCase()+x.substring(1);
+        });
+        //Result: no print. why? Becasue there is no terminal operation here.
+        //        Intermediate operation will not really operate.
         System.out.println("--------------- ");
+        //Following example: Got a terminal operation. So, "InnerTest" will show up.
+        liststr2.stream().map(x->{
+            System.out.println("InnerTest !!!");
+            return x.substring(0,1).toUpperCase()+x.substring(1);
+        }).forEach(System.out::println);
+        System.out.println("---------------  Infinite stream: non stop");
+        //IntStream.iterate(0,x->(x+1)%2).distinct().limit(5).forEach(System.out::println);
+        System.out.println("---------------  Infinite stream: Solved!!!");
+        IntStream.iterate(0,x->(x+1)%2).limit(5).distinct().forEach(System.out::println);
+        System.out.println("---------------  ");
+
 
 
     }
