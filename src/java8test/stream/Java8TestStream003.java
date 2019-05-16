@@ -56,10 +56,12 @@ public class Java8TestStream003 {
         System.out.println("---------- iterate()");
 
         //Stream Method: iterate()
+        System.out.println("---------- infinite");
+        //Stream.iterate(1,x->x+1).forEach(System.out::println);
+        System.out.println("---------- limit");
+
         Stream.iterate(1,x->x+1).limit(5).collect(Collectors.toList()).forEach(System.out::println);
         System.out.println("---------- ");
-
-
 
 
     }
