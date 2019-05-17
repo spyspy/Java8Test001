@@ -37,7 +37,20 @@ public class Java8TestStream005 {
 
         System.out.println("---------------");
         List<String> list2 = Arrays.asList("hello","kitty","hihiwowowo");
-        list2.stream().filter(x->x.length()>5).forEach(System.out::println);
+        list2.stream().filter(x->x.length()==5).forEach(System.out::println);
+
+        System.out.println("---------------");
+
+        List<String> list3 = Arrays.asList("helle","kittia","hihiwowowo");
+        list3.stream().map(x->x.length()).filter(x->x==5).findFirst().ifPresent(System.out::println);
+
+        System.out.println("---------------");
+        list3.stream().mapToInt(x->x.length()).filter(x->x==5).findFirst().ifPresent(System.out::println);
+        System.out.println("---------------");
+        list3.stream().mapToInt(x->{
+            System.out.println("TestBox");
+            return x.length();}
+        ).filter(x->x==6).findFirst().ifPresent(System.out::println);
 
 
     }
