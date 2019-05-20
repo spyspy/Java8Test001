@@ -51,6 +51,8 @@ public class Java8TestStream005 {
             System.out.println("TestBox");
             return x.length();}
         ).filter(x->x==6).findFirst().ifPresent(System.out::println);
+        System.out.println("---------------XXX");
+
 
 
     }
