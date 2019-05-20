@@ -104,6 +104,8 @@ public class Java8TestStream004 {
         System.out.println("---------------  Infinite stream: Solved!!!");
         IntStream.iterate(0,x->(x+1)%2).limit(5).distinct().forEach(System.out::println);
         System.out.println("---------------  ");
+        System.out.println("--------------- 45465456465 AAASSSS");
+
 
 
 

@@ -53,5 +53,7 @@ public class Java8TestStream005 {
         ).filter(x->x==6).findFirst().ifPresent(System.out::println);
 
 
+
+
     }
 }
