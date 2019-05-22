@@ -18,12 +18,18 @@ public class Java8TestStream003 {
         Set<String> set1 = stream2.collect(Collectors.toCollection(TreeSet::new));
         System.out.println("Class Name:"+set1.getClass().getName());
         set1.forEach(System.out::println);//TreeSet's order is defaulted by alphabet order
-        System.out.println("----------");
+        System.out.println("---------- Collectors.joining()");
 
         //Collectors Method: joining()  : combine string by order
-        Stream<String> stream3 = Stream.of("xTest01","xTest02","xTest03");
+        Stream<String> stream3 = Stream.of("XXXXX","AAAAA","EEEEEE");
         String str = stream3.collect(Collectors.joining());
         System.out.println(str);
+
+        System.out.println("---------- Collectors.joining(\"\")");
+        Stream<String> stream33 = Stream.of("XXXXX","AAAAA","EEEEEE");
+        String str2 = stream33.collect(Collectors.joining("//n"));//delimiter 分隔符號
+        System.out.println(str2);
+
         System.out.println("---------- map to uppercase");
 
         // How to do toUppercase all string?
