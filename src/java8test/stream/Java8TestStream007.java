@@ -7,11 +7,11 @@ import static java.util.stream.Collectors.*;
 public class Java8TestStream007 {
     public static void main(String[] args) {
         //Video NO22
-        Student7 s1 = new Student7("Test01",99,100);
-        Student7 s2 = new Student7("Test02",15,95);
-        Student7 s3 = new Student7("Test03",45,60);
-        Student7 s4 = new Student7("Test04",25,66);
-        Student7 s5 = new Student7("Test04",33,95);
+        Student7 s1 = new Student7("Test01",100);
+        Student7 s2 = new Student7("Test02",95);
+        Student7 s3 = new Student7("Test03",60);
+        Student7 s4 = new Student7("Test04",66);
+        Student7 s5 = new Student7("Test04",95);
 
         List<Student7>  studentList = Arrays.asList(s1,s2,s3,s4,s5);
         System.out.println("steam().cont():"+studentList.stream().count());
@@ -65,14 +65,10 @@ public class Java8TestStream007 {
 
 class Student7{
     private String name;
-    private Integer age;
     private Integer score;
 
-
-
-    public Student7(String name, Integer age, Integer score) {
+    public Student7(String name,Integer score) {
         this.name = name;
-        this.age = age;
         this.score = score;
     }
 
@@ -84,13 +80,6 @@ class Student7{
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     public Integer getScore() {
         return score;
@@ -104,7 +93,6 @@ class Student7{
     public String toString() {
         return "Student7{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
                 ", score=" + score +
                 '}';
     }
