@@ -15,17 +15,18 @@ public class BinaryArrayToBase64String {
         try {
 
             // convert file to byte[]
-            byte[] bFile = readBytesFromFile("C:\\temp\\wow.pdf");
+            //byte[] bFile = readBytesFromFile("C:\\temp\\wow.pdf");
+            byte[] bFile = readBytesFromFile("C:\\temp\\test-image.jpg");
 
             //java nio
             //byte[] bFile = Files.readAllBytes(new File("C:\\temp\\testing1.txt").toPath());
             //byte[] bFile = Files.readAllBytes(Paths.get("C:\\temp\\testing1.txt"));
 
             // save byte[] into a file
-            Path path = Paths.get("C:\\temp\\abc2.txt");
+            Path path = Paths.get("C:\\temp\\abc3.txt");
             Files.write(path, bFile);
 
-            System.out.println("Done");
+            System.out.println("Save File Done");
 
             final Base64.Decoder decoder = Base64.getDecoder();
             final Base64.Encoder encoder = Base64.getEncoder();
@@ -33,12 +34,15 @@ public class BinaryArrayToBase64String {
             final byte[] textByte = text.getBytes("UTF-8");
             //編碼
             final String encodedText = encoder.encodeToString(bFile);
+            System.out.println("Encoded Text:");
             System.out.println(encodedText);
             //解碼
             //System.out.println(new String(decoder.decode(encodedText), "UTF-8"));
+            decoder.decode(encodedText);
 
-
-
+            //解碼輸出
+            Path path2 = Paths.get("C:\\temp\\abc3.jpg");
+            Files.write(path2, decoder.decode(encodedText));
 
             //Print bytes[]
 //            for (int i = 0; i < bFile.length; i++) {
