@@ -23,6 +23,8 @@ public class MakePdf2 {
             System.out.println(localtime.toString());
             System.out.println("O:"+localDatetime.toString());
 
+            //Original :2019-09-19T13:44:49.806
+            //Changed  :2019-09-19T13_44_49_806
             String localDateTimeStr = localDatetime.toString().replaceAll("[.:]", "_");
             System.out.println("R:"+localDateTimeStr);
             //Destination Path of PDF
