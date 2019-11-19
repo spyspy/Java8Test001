@@ -6,7 +6,7 @@ import java.util.Base64;
 public class MakePdf {
     public static void main(String[] args) {
 
-        try{
+        try {
             //How to make pdf from base64
             String filePath = "D://test.pdf";
             String base64String = "";
@@ -14,7 +14,7 @@ public class MakePdf {
             fos.write(Base64.getDecoder().decode(base64String));
             fos.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
