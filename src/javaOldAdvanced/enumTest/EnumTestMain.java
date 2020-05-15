@@ -9,9 +9,9 @@ public class EnumTestMain {
         Map<String,String> myMap = new HashMap<>();
 
 
-        myList.add("GOGO1");
-        myList.add("GOGO2");
-        myList.add("GOGO3");
+        myList.add("List1");
+        myList.add("List2");
+        myList.add("List3");
 
 
         System.out.println(MyObject.values());
@@ -22,7 +22,6 @@ public class EnumTestMain {
 
         //Build a Map
         for(MyObject w:myobj1){
-
             System.out.println("W:"+w.name());
             myMap.put(w.name(),myList.get(countV));
             countV++;
@@ -30,10 +29,20 @@ public class EnumTestMain {
 
         //Print your map
         for(Map.Entry<String,String> sss : myMap.entrySet()){
-            System.out.println("Map:"+sss.getKey());
-            System.out.println("Map:"+sss.getValue());
+            System.out.println("Map entrySet: "+sss.getKey());
+            System.out.println("Map entrySet: "+sss.getValue());
         }
 
+        //Print your map
+        for(String str : myMap.keySet()){
+            System.out.println("Map keySet : "+str.toString());
+            System.out.println("Map keySet : "+myMap.get(str).toString());
+        }
+
+        //Print your map in Java8
+        myMap.entrySet().forEach(entry->{
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        });
 
     }
 }
