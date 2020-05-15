@@ -27,6 +27,9 @@ public class EnumTestMain {
             countV++;
         }
 
+        System.out.println("-------Print MAP --------------");
+
+
         //Print your map
         for(Map.Entry<String,String> sss : myMap.entrySet()){
             System.out.println("Map entrySet: "+sss.getKey());
@@ -39,10 +42,15 @@ public class EnumTestMain {
             System.out.println("Map keySet : "+myMap.get(str).toString());
         }
 
+        System.out.println("-------JAVA 8--------------");
+
         //Print your map in Java8
         myMap.entrySet().forEach(entry->{
             System.out.println(entry.getKey() + " " + entry.getValue());
         });
+
+        //Print your map in Java8
+        myMap.forEach((key, value) -> System.out.println(key + " | " + value));
 
     }
 }
