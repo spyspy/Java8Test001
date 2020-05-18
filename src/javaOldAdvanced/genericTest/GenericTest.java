@@ -1,4 +1,4 @@
-package javaOldAdvanced;
+package javaOldAdvanced.genericTest;
 
 import java.util.*;
 
@@ -47,6 +47,14 @@ class GenericTest2<T>{
     }
 
     public void test01(List<? extends List> list){
+
+    }
+
+    public <E> void test02(List<? extends E> list){
+
+    }
+
+    public <E> void test03(List<E> list){
 
     }
 }
