@@ -1,4 +1,4 @@
-package javaOldAdvanced.enumTest;
+package javaAdvanced.enumTest;
 
 import java.util.*;
 

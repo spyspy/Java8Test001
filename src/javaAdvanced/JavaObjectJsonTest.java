@@ -1,4 +1,4 @@
-package javaOldAdvanced;
+package javaAdvanced;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

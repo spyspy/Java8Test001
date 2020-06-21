@@ -1,4 +1,4 @@
-package javaOldAdvanced;
+package javaAdvanced;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -19,7 +19,7 @@ public class ObjectToXmlTest {
             JAXBContext jaxbContext = JAXBContext.newInstance(TestObjectForXML.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            QName qName = new QName("javaOldAdvanced","testObjectForXML");
+            QName qName = new QName("javaAdvanced","testObjectForXML");
             JAXBElement<TestObjectForXML> root = new JAXBElement<>(qName, TestObjectForXML.class,testVo);
             StringWriter sw = new StringWriter();
             jaxbMarshaller.marshal(root, sw);

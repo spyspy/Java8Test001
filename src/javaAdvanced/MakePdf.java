@@ -1,4 +1,4 @@
-package javaOldAdvanced;
+package javaAdvanced;
 
 import java.io.FileOutputStream;
 import java.util.Base64;

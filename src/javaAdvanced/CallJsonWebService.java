@@ -1,6 +1,6 @@
 
 
-package javaOldAdvanced;
+package javaAdvanced;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
