@@ -11,6 +11,20 @@ public class GenericTest {
 
         List<? extends List<String>> list3 = new ArrayList<>();
 
+
+        //2020/06/10 Test
+        Box<String> stringBox = new Box<>();
+        Box rawBox = stringBox;
+        rawBox.set(8);  // warning: unchecked invocation to set(T)
+
+
+
+        Box<Integer> bi;
+        bi = createBox();
+    }
+
+    static Box createBox(){
+        return new Box<Integer>();
     }
 }
 
@@ -57,4 +71,15 @@ class GenericTest2<T>{
     public <E> void test03(List<E> list){
 
     }
+    public void test04(Class<? extends Collection<?>> list){
+
+    }
+}
+
+class Box<T> {
+    public void set(T t) { /* ... */
+
+        System.out.println("Box set();"+t.toString());
+    }
+
 }
