@@ -1,4 +1,4 @@
-package javaOldAdvanced.enumTest;
+package javaAdvanced.enumTest;
 
 public enum MyObject {
     enumKey1,
