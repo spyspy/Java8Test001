@@ -2,7 +2,7 @@ package javaAdvanced.enumTest;
 
 import java.util.*;
 
-public class EnumTestMain {
+public class EnumTest1 {
     public static void main(String[] args) {
         List<String> myList = new ArrayList<>();
         MyEnumObject[] myEnumObj1 = MyEnumObject.values();
