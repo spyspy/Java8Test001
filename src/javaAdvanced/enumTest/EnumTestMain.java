@@ -5,29 +5,30 @@ import java.util.*;
 public class EnumTestMain {
     public static void main(String[] args) {
         List<String> myList = new ArrayList<>();
-        MyEnumObject[] myobj1 = MyEnumObject.values();
+        MyEnumObject[] myEnumObj1 = MyEnumObject.values();
         Map<String,String> myMap = new HashMap<>();
 
 
         myList.add("List1");
         myList.add("List2");
         myList.add("List3");
+        myList.add("List4");
 
 
         System.out.println("MyEnumObject.values():"+ MyEnumObject.values());
 
-        System.out.println(myobj1);
+        System.out.println(myEnumObj1);
 
         int countV = 0;
 
         //Build a Map
-        for(MyEnumObject w:myobj1){
+        for(MyEnumObject w : myEnumObj1){
             System.out.println("W:"+w.name());
             myMap.put(w.name(),myList.get(countV));
             countV++;
         }
 
-        System.out.println("-------Print MAP --------------");
+        System.out.println("-------Print MAP --------------V1");
 
 
         //Print your map
@@ -36,13 +37,15 @@ public class EnumTestMain {
             System.out.println("Map entrySet: "+sss.getValue());
         }
 
+        System.out.println("-------Print MAP --------------V2");
+
         //Print your map
         for(String str : myMap.keySet()){
             System.out.println("Map keySet : "+str.toString());
             System.out.println("Map keySet : "+myMap.get(str).toString());
         }
 
-        System.out.println("-------JAVA 8--------------");
+        System.out.println("-------Print MAP-------JAVA 8-----");
 
         //Print your map in Java8
         myMap.entrySet().forEach(entry->{
