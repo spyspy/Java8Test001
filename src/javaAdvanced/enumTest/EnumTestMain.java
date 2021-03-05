@@ -5,7 +5,7 @@ import java.util.*;
 public class EnumTestMain {
     public static void main(String[] args) {
         List<String> myList = new ArrayList<>();
-        MyObject[] myobj1 = MyObject.values();
+        MyEnumObject[] myobj1 = MyEnumObject.values();
         Map<String,String> myMap = new HashMap<>();
 
 
@@ -14,14 +14,14 @@ public class EnumTestMain {
         myList.add("List3");
 
 
-        System.out.println(MyObject.values());
+        System.out.println("MyEnumObject.values():"+ MyEnumObject.values());
 
         System.out.println(myobj1);
 
         int countV = 0;
 
         //Build a Map
-        for(MyObject w:myobj1){
+        for(MyEnumObject w:myobj1){
             System.out.println("W:"+w.name());
             myMap.put(w.name(),myList.get(countV));
             countV++;

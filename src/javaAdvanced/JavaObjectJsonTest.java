@@ -35,7 +35,7 @@ class MyObject{
 
     @Override
     public String toString() {
-        return "MyObject{" +
+        return "MyEnumObject{" +
                 "name1='" + name1 + '\'' +
                 ", name2='" + name2 + '\'' +
                 ", name3='" + name3 + '\'' +

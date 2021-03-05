@@ -1,6 +1,6 @@
 package javaAdvanced.enumTest;
 
-public enum MyObject {
+public enum MyEnumObject {
     enumKey1,
     enumKey2,
     enumKey3
