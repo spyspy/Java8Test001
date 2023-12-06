@@ -8,12 +8,13 @@ public class Java8Test003Function {
 
         //Function's features: one parameter, return a value
         Java8Test003Function test = new Java8Test003Function();
-        System.out.println(test.myCompute(11, value->{return 2*value;}));
-        System.out.println(test.myCompute(11, value-> 99+value));
+        // 定義 Function 當成參數
+        System.out.println(myCompute(11, value->{return 2*value;}));
+        System.out.println(myCompute(11, value-> 99+value));
 
         //function's default method
-        System.out.println(test.myComputeFor2Fun1(1, value-> 99+value,value->value*value));//100
-        System.out.println(test.myComputeFor2Fun2(1, value-> 99+value,value->value*value));//10000
+        System.out.println("compose: "+myComputeFor2Fun1(1, value-> 99+value,value->value*value));//100
+        System.out.println("andThen: "+myComputeFor2Fun2(1, value-> 99+value,value->value*value));//10000
 
         //BiFunction
         //For Example: 1 + 2 = 3  There are three parameter involved
@@ -29,19 +30,30 @@ public class Java8Test003Function {
 
     }
 
-    private int myCompute(int a, Function<Integer,Integer> function) {
+    // 定義 Function 當成參數
+    private static int myCompute(int a, Function<Integer,Integer> function) {
 
         int result = function.apply(a);
 
         return result;
     }
 
-    //function's default method: compose  ==> parameter first, then itself
-    private int myComputeFor2Fun1(int a,Function<Integer,Integer> f1,Function<Integer,Integer> f2){
+    //function's default method: compose (串接兩個function )
+    // ==> execute parameter function(f2) first, then itself(subject function f1)
+    private static int myComputeFor2Fun1(int a,Function<Integer,Integer> f1,Function<Integer,Integer> f2){
+        //  a   f1              f2
+        // (1, value-> 99+value,value->value*value)
+        // f2 => 1*1=1  (得到結果，繼續給下一個要執行的function f1)
+        // f1 => 1+99 = 100 (result)
         return f1.compose(f2).apply(a);
     };
-    //function's default method: andThen   ==> itself first, then parameter
-    private int myComputeFor2Fun2(int a,Function<Integer,Integer> f1,Function<Integer,Integer> f2){
+    //function's default method: andThen
+    // ==> execute itself(subject function f1) first, then parameter function(f2)
+    private static int myComputeFor2Fun2(int a,Function<Integer,Integer> f1,Function<Integer,Integer> f2){
+        //  a   f1              f2
+        // (1, value-> 99+value,value->value*value)
+        // f1 => 1+99 =100 (得到結果，繼續給下一個要執行的function f2)
+        // f2 => 100*100=10000
         return f1.andThen(f2).apply(a);
     };
 
