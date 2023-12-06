@@ -11,9 +11,16 @@ public class Java8Test004BiFun {
         Person p2 = new Person("Apple",44);
         Person p3 = new Person("Wonderful",35);
 
+        // Build a Lis
         List<Person> ps = Arrays.asList(p1,p2,p3);
         Java8Test004BiFun test = new Java8Test004BiFun();
+
         List<Person> psResult = test.getPersonByName("Apple", ps);
+        System.out.println("=========================================");
+
+        System.out.println("psResult::"+psResult);
+
+
         psResult.forEach(p->System.out.println(p.getName()+":"+p.getAge()));
 
         System.out.println("=========================================");
@@ -31,14 +38,18 @@ public class Java8Test004BiFun {
     //find some conditions in List<Person>
     //use functional way....only one line?
     private List<Person> getPersonByName(String name,List<Person>ps){
-        return ps.stream().filter(person -> person.getName().equals(name)).collect(Collectors.toList());
+        // 篩選第一個參數的 name
+        return ps.stream().filter(person -> person.getName().equals(name))
+                            .collect(Collectors.toList());
     }
 
     //search by age
     //Analysis: Two parameget and One Return... JUST like BiFunction
     private List<Person> getPersonByAge(int age,List<Person>ps){
         //return ps.stream().filter(person -> person.getAge() == (age)).collect(Collectors.toList());
-        BiFunction<Integer,List<Person>,List<Person>> biFun = (biAge,biPs)->biPs.stream().filter(per ->per.getAge()>biAge).collect(Collectors.toList());
+        BiFunction<Integer,List<Person>,List<Person>> biFun = (biAge,biPs)->biPs.stream()
+                                                                .filter(per ->per.getAge()>biAge)
+                                                                .collect(Collectors.toList());
         return biFun.apply(age,ps);
     }
 

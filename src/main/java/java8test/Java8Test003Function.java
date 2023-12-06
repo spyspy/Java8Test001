@@ -16,6 +16,8 @@ public class Java8Test003Function {
         System.out.println("compose: "+myComputeFor2Fun1(1, value-> 99+value,value->value*value));//100
         System.out.println("andThen: "+myComputeFor2Fun2(1, value-> 99+value,value->value*value));//10000
 
+        System.out.println(" =============== BiFunction ===============");
+
         //BiFunction
         //For Example: 1 + 2 = 3  There are three parameter involved
         System.out.println(test.myComputeForBiFun1(2,3,(v1,v2)->v1+v2));
@@ -31,6 +33,7 @@ public class Java8Test003Function {
     }
 
     // 定義 Function 當成參數
+    // Function<參數,結果> (單一參數的方法，BiFunction則是兩個參數，一個結果)
     private static int myCompute(int a, Function<Integer,Integer> function) {
 
         int result = function.apply(a);
