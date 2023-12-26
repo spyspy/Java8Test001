@@ -13,10 +13,9 @@ public class MakeTextFile {
 //                new FileOutputStream("c:/awow/wfilename.txt"), "utf-8"))) {
                 // 直接寫檔案名稱，產生再專案內部
                 // C:\xcode\Java8Test001\wfilename.txt
-                new FileOutputStream("wfilename999.txt"), "utf-8")))
-        {
+                new FileOutputStream("wfilename999.txt"), "utf-8"))) {
             writer.write(content);
-        }catch (IOException ex) {
+        } catch (IOException ex) {
             // Report
             ex.printStackTrace();
         }
