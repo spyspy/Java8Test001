@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EnumTest1 {
 
-    // «Ø¥ß¦Û¤v MyEnumObject
+    // å»ºç«‹è‡ªå·± MyEnumObject
     public static void main(String[] args) {
         List<String> myList = new ArrayList<>();
         // Enum Values is a array
@@ -40,10 +40,10 @@ public class EnumTest1 {
 
         System.out.println("-------Print MAP --------------V2");
 
-        // Print your map ¨ú±o Map ¤º®e¥ş³¡ªºkey
+        // Print your map å–å¾— Map å…§å®¹å…¨éƒ¨çš„key
         for(String str : myMap.keySet()){
             System.out.println("Map keySet : "+str.toString());
-            // ¥Îkey¨ú±ovalue
+            // ç”¨keyå–å¾—value
             System.out.println("Map keySet : "+myMap.get(str).toString());
         }
 
