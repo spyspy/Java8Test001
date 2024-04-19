@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class itext001 {
     public static void main(String[] args) throws IOException {
-        PdfReader reader = new PdfReader("src/main/resources/pdftest.pdf");
+        PdfReader reader = new PdfReader("src/main/resources/input.pdf");
         PdfWriter writer = new PdfWriter("src/main/resources/pdftest-modified.pdf");
         PdfDocument pdfDocument = new PdfDocument(reader, writer);
         addContentToDocument(pdfDocument);

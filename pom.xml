@@ -9,12 +9,12 @@
     <version>1.0-SNAPSHOT</version>
     <dependencies>
 
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>ProLib</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <!-- Replace with the version of Project 1 -->
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.example</groupId>-->
+<!--            <artifactId>ProLib</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--            &lt;!&ndash; Replace with the version of Project 1 &ndash;&gt;-->
+<!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
@@ -64,7 +64,11 @@
             <artifactId>cleanup</artifactId>
             <version>3.0.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.24</version>
+        </dependency>
     </dependencies>
     <properties>
         <!-- Set Java version to 8 -->
